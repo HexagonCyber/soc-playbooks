@@ -3,70 +3,62 @@
 ### Single Line Description
 The alert indicates that a user account has been compromised through a credential guessing or stuffing attack, involving an IP address and accessing Microsoft Azure.
 
-#### Severity:
-High: Credential compromise poses a significant risk to sensitive data and services.
+**Severity:**
+High: A compromised user account due to credential guessing or stuffing attack indicates a potential breach and unauthorized access.
 
-#### Detection:
-Triggered by: Detection rule based on failed and successful login attempts indicative of credential guessing or stuffing.
-Alert name: "User Account Compromised by Credential Guessing or Stuffing Attack"
-Description: This alert is triggered when a user account shows signs of being compromised via credential guessing or stuffing, targeting a cloud application in Microsoft Azure.
+**Detection:**
+**Triggered by:** Security alert from Microsoft Sentinel.
+**Alert name:** "User Account Compromised by Credential Guessing or Stuffing Attack"
+**Description:** An alert triggered when a user account is compromised through credential guessing or stuffing, targeting a Microsoft Azure cloud application.
 
-#### Collection:
-Logs to be collected:
-- Authentication logs from Microsoft Azure.
-- Sign-in logs from Microsoft Sentinel.
-- Endpoint logs from Microsoft Defender for Endpoint.
+**Collection:**
+**Logs to be collected:**
+- Authentication logs from Azure AD.
+- Logs from Microsoft Sentinel.
+- Endpoint data from Microsoft Defender for Endpoint.
 - Email activity logs from Microsoft Defender for Office 365.
-- Network logs, firewall logs, and VPN logs for additional context.
-Artifacts:
-- Details of login attempts, including timestamps, IP addresses, and geolocation data.
-- User activity logs.
-- Device and session information.
+**Artifacts:**
+- Details of the impacted user account.
+- Source IP address involved in the attack.
+- Specific logs related to the Azure application activity.
+- Device information associated with the user account.
 
-#### Analysis:
-Verify the Alert:
-- Confirm the accuracy by reviewing the login attempt patterns and correlating with raw log data.
-- Check for multiple failed attempts followed by successful logins from the same IP address.
+**Analysis:**
+**Verify the Alert:**
+- Cross-reference the alert details with raw log data from Azure AD and Sentinel.
+- Confirm the source IP and user activity associated with the compromise.
+**Investigate User Activity:**
+- Review recent activities of the compromised user account across all connected services.
+- Identify any unusual or unauthorized actions performed post-compromise.
+**Contextual Information:**
+- Gather additional information about the source IP address from threat intelligence sources.
+- Analyze the attack patterns to understand the scope and method used in the credential attack.
 
-Investigate User Activity:
-- Review recent activities of the affected user account for any unauthorized actions or anomalies.
-- Examine the sequence of logons and actions taken by the user post-login.
+**Containment and Eradication:**
+**Immediate Containment:**
+- Disable the compromised user account to prevent further unauthorized access.
+- Force a password reset and revoke all active sessions and tokens.
+**Eradication:**
+- Block the malicious IP address across all relevant platforms.
+- Scan the user's endpoint device with Defender for Endpoint to ensure no malware or unauthorized software is present.
+- Conduct a thorough review of Azure application configurations and permissions.
 
-Contextual Information:
-- Gather additional contextual information, such as usual login patterns of the user.
-- Cross-reference the IP address with threat intelligence databases to identify known malicious sources.
-
-#### Containment and Eradication:
-Immediate Containment:
-- Temporarily disable the user account to prevent further unauthorized access.
-- Enforce a password reset for the affected user account.
-
-Eradication:
-- Block the malicious IP address identified in the alert.
-- Check and remove any detected malware or backdoors from compromised devices.
-- Revoke any suspicious sessions and tokens associated with the user account.
-- Update firewall and endpoint protection rules to prevent similar attacks.
-
-#### Recovery:
-Restore Access:
+**Recovery:**
+**Restore Access:**
 - Re-enable the user account after ensuring it is secure.
-- Require the user to set a strong, unique password.
-- Implement multi-factor authentication (MFA) for the affected user account and others if not already enabled.
+- Enforce the use of a strong, unique password.
+- Implement and/or verify multi-factor authentication (MFA) for the user.
+**Monitor:**
+- Increase monitoring of the user account for any further suspicious activities.
+- Set up additional alerting for any anomalies in user logins and activities.
+**Review and Update:**
+- Review and update security policies and incident response procedures based on findings.
+- Enhance detection rules and preventive measures to avoid similar incidents in the future.
 
-Monitor:
-- Increase monitoring of the user account for further suspicious activities.
-- Regularly review login attempts and geolocation data for anomalies.
-
-Review and Update:
-- Review and update security policies and incident response procedures based on the incident.
-- Enhance detection rules and preventive measures in Sentinel, Defender for Endpoint, and Defender for Office 365 to avoid similar incidents.
-
-#### Approvals:
-Incident Commander:
+**Approvals:**
+**Incident Commander:**
 - Oversees the incident response process and approves containment and eradication measures.
-
-IT Security Manager:
-- Approves recovery steps and ensures system and network security before restoring access.
-
-Compliance Officer:
+**IT Security Manager:**
+- Approves recovery steps and ensures the system and network are secure before restoring access.
+**Compliance Officer:**
 - Reviews the incident for compliance-related implications and approves the final incident report.
