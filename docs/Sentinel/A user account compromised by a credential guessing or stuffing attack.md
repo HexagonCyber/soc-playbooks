@@ -14,16 +14,16 @@ High: Indicates a potentially severe security breach due to successful credentia
 **Description**: An alert triggered when a user account is accessed through credential guessing or stuffing attacks, impacting Microsoft Azure.
 
 #### **Collection**
-**Logs to be collected**:
-- Azure AD sign-in logs.
-- Microsoft Sentinel incident details.
-- Defender for Endpoint alerts and logs.
-- Defender for Office 365 activity logs.
-**Artifacts**:
-- Impacted user account details.
-- Source IP address of the attack.
-- Cloud application (Microsoft Azure) activity logs.
-- Related security alerts and threat intelligence reports.
+1. **Logs to be collected**:
+   - Azure AD sign-in logs.
+   - Microsoft Sentinel incident details.
+   - Defender for Endpoint alerts and logs.
+   - Defender for Office 365 activity logs.
+2. **Artifacts**:
+   - Impacted user account details.
+   - Source IP address of the attack.
+   - Cloud application (Microsoft Azure) activity logs.
+   - Related security alerts and threat intelligence reports.
 
 #### **Analysis**
 1. **Verify the Alert**:
