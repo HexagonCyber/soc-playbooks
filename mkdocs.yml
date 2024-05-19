@@ -28,6 +28,7 @@ theme:
 nav:
   - Sentinel:
     - Sentinel/template.md
+    - Sentinel/Staff login from different countries within 3 hours.md
   - Email:
     - Phishing: Email/phishing.md
     - Spoofing: Email/spoofing.md
