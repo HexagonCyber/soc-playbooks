@@ -1,7 +1,6 @@
 ### Staff login from different countries within 3 hours
 
 ### Description
-
 The KQL query identifies user accounts with successful logins from multiple distinct countries within a specified timeframe, excluding certain usernames and IP ranges.
 
 #### Severity:
