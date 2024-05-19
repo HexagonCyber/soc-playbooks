@@ -26,6 +26,8 @@ theme:
     code: Roboto Mono
 
 nav:
+  - Sentinel:
+    - Sentinel/template.md
   - Email:
     - Phishing: Email/phishing.md
     - Spoofing: Email/spoofing.md
