@@ -1,0 +1,55 @@
+site_name: IR Playbooks
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - search.suggest
+    - search.highlight
+  palette:
+  - scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Light Mode
+    primary: cyan
+    accent: blue
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Dark Mode
+    primary: cyan
+    accent: blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+nav:
+  - Email:
+    - Phishing: Email/phishing.md
+    - Spoofing: Email/spoofing.md
+    - Spam: Email/spam.md
+  - Malware:
+    - Ransomware: Malware/ransomware.md
+    - Rootkits: Malware/rootkits.md
+    - Trojans: Malware/trojans.md
+  - Defender for Endpoint:
+    - MDE Client Analyzer: Defender for Endpoint/mde-client-analyzer.md
+    - Exclusions: Defender for Endpoint/mde-exclusions.md
+    - Updates: Defender for Endpoint/mde-updates.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/HexagonCyber
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/HexagonCyber
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+
+copyright: |
+  &copy; 2022 <a href="https://twitter.com/HexagonCyber"  target="_blank" rel="noopener">HexagonCyber</a>
