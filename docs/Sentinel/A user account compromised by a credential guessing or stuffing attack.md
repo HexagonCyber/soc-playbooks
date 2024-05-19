@@ -8,7 +8,9 @@ High: Indicates a potentially severe security breach due to successful credentia
 
 #### **Detection**
 **Triggered by**: Alert from Microsoft security products such as Sentinel, Defender for Endpoint, or Defender for Office 365.
+
 **Alert name**: "User Account Compromised by Credential Guessing or Stuffing Attack"
+
 **Description**: An alert triggered when a user account is accessed through credential guessing or stuffing attacks, impacting Microsoft Azure.
 
 #### **Collection**
